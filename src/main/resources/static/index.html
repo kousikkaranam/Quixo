@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quixo - File/Text Sharing</title>
+
+    <!-- Google Font -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+            rel="stylesheet"
+    />
+    <!-- Font Awesome (for icons) -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- Theme Toggle -->
+<div class="theme-toggle" id="themeToggle">
+    <i class="fas fa-sun toggle-icon sun-icon"></i>
+    <div class="toggle-circle"></div>
+    <i class="fas fa-moon toggle-icon moon-icon"></i>
+</div>
+
+<!-- Title -->
+<div class="title">QUIXO</div>
+
+<!-- Container with 3 columns -->
+<div class="container">
+    <!-- Delete Section (Left) -->
+    <div class="box delete-section">
+        <h2>Delete Share</h2>
+        <label for="deleteCodeInput">Enter Code to Delete:</label>
+        <input type="text" id="deleteCodeInput" placeholder="e.g., abc12345" />
+        <button id="deleteBtn">Delete</button>
+        <div id="deleteResult" class="result-area"></div>
+    </div>
+
+    <!-- Create Section (Middle) -->
+    <div class="create-section">
+        <label>Upload File</label>
+        <input type="file" id="fileInput" />
+
+        <label>Enter Text</label>
+        <textarea id="textInput" placeholder="Some text..."></textarea>
+
+        <button id="generateBtn">Generate Link</button>
+
+        <!-- Hidden container for the generated link -->
+        <div id="linkContainer" class="hidden">
+            <label>Generated Link:</label>
+            <input type="text" id="generatedLink" readonly />
+            <button id="copyBtn">Copy</button>
+        </div>
+    </div>
+
+    <!-- Retrieve Box (Right) -->
+    <div class="box retrieve-section">
+        <h2>Retrieve Share</h2>
+        <label for="codeInput">Enter Code:</label>
+        <input type="text" id="codeInput" placeholder="e.g., abc12345" />
+        <button id="retrieveBtn">Retrieve</button>
+        <div id="retrieveResult" class="result-area"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

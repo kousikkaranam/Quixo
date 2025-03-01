@@ -1,0 +1,211 @@
+/* GLOBAL RESET & FONT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    text-align: center;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+body.light {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* TITLE */
+.title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #00aaff;
+    margin-bottom: 50px;
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    background: #222;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    transition: background 0.3s;
+    justify-content: space-between;
+}
+body.light .theme-toggle {
+    background: #ddd;
+}
+.toggle-circle {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+}
+body.light .toggle-circle {
+    transform: translateX(25px);
+}
+.toggle-icon {
+    font-size: 16px;
+    color: #f1c40f;
+    padding: 3px;
+}
+
+/* MAIN CONTAINER FOR 3 COLUMNS */
+.container {
+    display: flex;
+    flex-wrap: nowrap; /* Keep columns in a row */
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* BOXES (each column) */
+.box {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1; /* Distribute space for 3 columns */
+    box-shadow: 0px 0px 15px rgba(0, 153, 255, 0.2);
+    transition: transform 0.2s ease-in-out, background 0.3s;
+    max-width: 350px; /* Limit each column width if desired */
+}
+body.light .box {
+    background: #e0e0e0;
+}
+.box:hover {
+    transform: scale(1.03);
+}
+
+/* HEADINGS (Blue Titles Inside Boxes) */
+h2 {
+    margin-bottom: 20px;
+    color: #00aaff;
+}
+
+/* LABELS & INPUTS */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    border: none;
+    color: white;
+    border-radius: 6px;
+}
+body.light input,
+body.light textarea {
+    background: #fff;
+    color: black;
+}
+
+/* BUTTONS */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+/* BUTTON COLORS */
+#deleteBtn {
+    background: #d9534f;
+    color: white;
+}
+#deleteBtn:hover {
+    background: #c9302c;
+}
+
+#generateBtn,
+#uploadBtn {
+    background: #007bff;
+    color: white;
+}
+#generateBtn:hover,
+#uploadBtn:hover {
+    background: #0056b3;
+}
+
+#retrieveBtn {
+    background: #28a745;
+    color: white;
+}
+#retrieveBtn:hover {
+    background: #218838;
+}
+
+/* RESULT MESSAGES (Delete & Retrieve feedback) */
+.result-area {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* HIDDEN UTILITY CLASS */
+.hidden {
+    display: none !important;
+}
+
+/* LINK CONTAINER (for the generated link in the share box) */
+.link-container {
+    margin-top: 20px;
+    text-align: left;
+}
+.link-container p {
+    margin-bottom: 5px;
+}
+.link-wrapper {
+    margin-top: 10px;
+    display: flex;
+    background: #333;
+    border-radius: 6px;
+}
+body.light .link-wrapper {
+    background: #fff;
+}
+.link-wrapper input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+}
+body.light .link-wrapper input {
+    color: #000;
+}
+.link-wrapper button {
+    background: none;
+    color: #00aaff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.link-wrapper button:hover {
+    color: #007bff;
+}
